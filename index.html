@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Athenian Salon · BTM Layout, Bengaluru</title>
+<meta name="description" content="Athenian Salon, BTM Layout, Bengaluru. Hair, colour, botox, beard, skin and makeup. Book your appointment on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Michroma&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#040504; --bg2:#0a0d0a; --ink:#f4f6f1; --mute:#8a928a;
+  --g:#b6f59a; --g2:#7fd36a;
+  --line:rgba(255,255,255,.14);
+  --sans:"Inter","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --wide:"Michroma","Eurostile","Arial Black",sans-serif;
+  --pad:clamp(20px,7.1vw,142px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.45;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+img{display:block;max-width:100%}
+::selection{background:var(--g);color:#000}
+.lbl{font-size:12px;font-weight:600;letter-spacing:.01em;text-transform:uppercase;line-height:1.25}
+.mute{color:var(--mute)}
+
+/* header */
+header{position:fixed;inset:0 0 auto 0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:20px var(--pad);background:linear-gradient(#040504 30%,transparent)}
+.logo{font-family:var(--wide);font-size:15px;letter-spacing:.08em;display:flex;align-items:center;gap:12px}
+.logo img{height:38px;width:auto}
+.links{display:flex;gap:34px}
+.links a{color:var(--mute);transition:color .2s}.links a:hover{color:var(--g)}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:14px;background:rgba(255,255,255,.1);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);font-weight:500;font-size:14px;transition:background .2s,transform .2s}
+.pill:hover{background:rgba(182,245,154,.25);transform:translateY(-2px)}
+
+/* hero: real salon interior  */
+.hero{position:relative;min-height:100vh;min-height:100svh;padding:110px var(--pad) 48px;display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:auto 1fr auto;column-gap:20px;overflow:hidden;isolation:isolate}
+
+.bg{position:absolute;inset:0;z-index:-2;background:url(photos/interior-wide.jpg) center/cover;filter:contrast(1.05) brightness(.6);transform:scale(1.06);animation:zoom 22s ease-in-out infinite alternate}
+@keyframes zoom{to{transform:scale(1.14) translateX(-1.5%)}}
+.shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,var(--bg) 8%,rgba(4,5,4,.7) 40%,rgba(4,5,4,.15) 85%),linear-gradient(0deg,var(--bg),transparent 30%)}
+.m1{grid-column:1/4}.m2{grid-column:4/7}.m3{grid-column:7/10}
+.hero .main{grid-row:2;grid-column:1/7;align-self:center;padding:7vh 0}
+.hero h1{font-weight:600;font-size:clamp(2.3rem,4.4vw,4.6rem);line-height:1.04;letter-spacing:-.02em;max-width:11ch}
+.hero .sub{font-weight:600;font-size:clamp(1.2rem,2vw,2.1rem);line-height:1.15;margin-top:clamp(30px,6vh,70px);letter-spacing:-.01em;max-width:16ch}
+.wordmark{grid-row:2;grid-column:8/12;align-self:center;font-family:var(--wide);font-size:clamp(1.3rem,2.3vw,2.4rem);letter-spacing:.06em;white-space:nowrap;text-shadow:0 0 40px rgba(182,245,154,.5)}
+.bottom{grid-row:3;grid-column:1/7;display:grid;grid-template-columns:auto 1fr;gap:0 clamp(30px,6vw,110px);align-items:end}
+.bottom .big{font-weight:300;font-size:clamp(2.4rem,4.6vw,4.9rem);line-height:.9;letter-spacing:-.02em}
+.meter{grid-column:1/-1;margin-top:34px;position:relative;height:18px}
+.meter::before{content:"";position:absolute;left:0;right:0;bottom:3px;height:1px;background:rgba(255,255,255,.3)}
+.meter .tk{position:absolute;top:0;width:1px;height:12px;background:rgba(255,255,255,.55)}
+.meter .fill{position:absolute;left:0;bottom:2px;height:3px;width:0;background:var(--g);transition:width 1.6s cubic-bezier(.2,.8,.2,1) .3s;box-shadow:0 0 14px rgba(182,245,154,.6)}
+.cta{position:absolute;right:var(--pad);bottom:48px;display:flex;align-items:center;gap:14px;z-index:2}
+.cta .ct{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:18px;font-weight:600;font-size:15px;letter-spacing:.01em;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:inset 0 1px 0 rgba(255,255,255,.2);transition:background .3s,border-color .3s,transform .3s,box-shadow .3s}
+.cta .ct::after{content:"→";color:var(--g);transition:transform .3s}
+.plus{position:relative;width:88px;height:88px;border-radius:22px;display:grid;place-items:center;background:linear-gradient(145deg,rgba(182,245,154,.55),rgba(40,80,36,.7) 55%,rgba(20,40,18,.9));box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 12px 40px rgba(127,211,106,.25);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.plus::before{content:"";position:absolute;inset:0;border-radius:inherit;border:1px solid var(--g);animation:cping 2.6s ease-out infinite;pointer-events:none}
+@keyframes cping{from{transform:scale(1);opacity:.7}to{transform:scale(1.5);opacity:0}}
+.plus svg{width:42px;height:42px;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.cta:hover .ct{background:rgba(182,245,154,.22);border-color:rgba(182,245,154,.6);transform:translateY(-4px);box-shadow:0 0 40px rgba(182,245,154,.3)}
+.cta:hover .ct::after{transform:translateX(5px)}
+.cta:hover .plus{transform:translateY(-4px);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 16px 50px rgba(127,211,106,.5)}
+.cta:hover .plus svg{transform:rotate(90deg)}
+
+/* sections */
+section{padding:clamp(80px,11vw,170px) var(--pad);position:relative}
+.sh{display:grid;grid-template-columns:repeat(12,1fr);column-gap:20px;margin-bottom:clamp(40px,6vw,90px);align-items:end}
+.sh .lbl{grid-column:1/4}
+.sh h2{grid-column:4/-1;font-weight:600;font-size:clamp(2rem,5vw,4.8rem);line-height:1;letter-spacing:-.025em}
+.sh h2 em{font-style:normal;color:var(--g)}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+.ph{position:relative;overflow:hidden;border-radius:20px;background:#0c100c}
+.ph img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .5s}
+.ph:hover img{transform:scale(1.06)}
+.ph figcaption{position:absolute;left:16px;bottom:14px;z-index:2;font-size:11px;font-weight:600;text-transform:uppercase;padding:6px 12px;border-radius:99px;background:rgba(4,5,4,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.ph::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,5,4,.55),transparent 45%);pointer-events:none}
+
+/* the space */
+.space{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:clamp(150px,19vw,290px);gap:20px}
+.space .a{grid-column:1/6;grid-row:span 2}
+.space .b{grid-column:6/13;grid-row:span 1}
+.space .c{grid-column:6/9;grid-row:span 1}
+.space .d{grid-column:9/13;grid-row:span 1}
+
+/* services with live photo */
+.svcwrap{display:grid;grid-template-columns:repeat(12,1fr);column-gap:20px}
+.svc{grid-column:1/9;border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:50px 1fr 1fr auto;gap:0 20px;align-items:center;padding:28px 0;border-bottom:1px solid var(--line);position:relative;transition:padding .35s}
+.row::before{content:"";position:absolute;inset:0 -12px;background:linear-gradient(90deg,rgba(182,245,154,.12),transparent 70%);opacity:0;transition:opacity .35s;pointer-events:none}
+.row:hover,.row.act{padding-left:14px}.row:hover::before,.row.act::before{opacity:1}
+.row .n{color:var(--mute);font-size:12px;font-weight:600}
+.row h3{font-weight:500;font-size:clamp(1.2rem,2.2vw,2rem);letter-spacing:-.015em}
+.row p{color:var(--mute);font-size:14px}
+.row button{color:var(--g);font-weight:500;font-size:13px;white-space:nowrap}
+.row button:hover{text-shadow:0 0 18px var(--g)}
+.sview{grid-column:9/13;position:sticky;top:100px;align-self:start;aspect-ratio:3/4;border-radius:22px;overflow:hidden;box-shadow:0 0 90px rgba(127,211,106,.18)}
+.sview img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s}
+.sview img.on,.sview .empty.on{opacity:1}
+.sview .empty{position:absolute;inset:0;opacity:0;transition:opacity .5s;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;padding:28px;background:radial-gradient(70% 60% at 80% 20%,rgba(182,245,154,.55),transparent 70%),linear-gradient(160deg,#0f1a0e,#040504)}
+.sview .empty span{font-size:12px;font-weight:600;color:var(--g)}.sview .empty b{font-weight:600;font-size:clamp(1.6rem,2.6vw,2.6rem);letter-spacing:-.02em;line-height:1.05}
+
+/* results gallery */
+.results{display:flex;gap:20px;overflow-x:auto;padding:0 var(--pad) 20px;margin-inline:calc(var(--pad)*-1);scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:var(--g2) transparent}
+.results .ph{flex:none;height:min(62vh,540px);aspect-ratio:3/4;scroll-snap-align:start}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid var(--line);padding-inline:var(--pad)}
+.stat{padding:48px 0;border-right:1px solid var(--line);padding-left:28px}
+.stat:first-child{padding-left:0}.stat:last-child{border:0}
+.stat b{display:block;font-weight:300;font-size:clamp(2.6rem,7.5vw,7rem);line-height:1;letter-spacing:-.03em;margin-top:12px}
+.stat b i{font-style:normal;color:var(--g);font-size:.42em;margin-left:6px;letter-spacing:0}
+
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.rev{padding:26px 24px;border-radius:20px;background:linear-gradient(160deg,rgba(182,245,154,.10),rgba(255,255,255,.03) 45%);border:1px solid rgba(255,255,255,.09);display:flex;flex-direction:column;min-height:280px;transition:transform .3s,border-color .3s}
+.rev:hover{transform:translateY(-6px);border-color:rgba(182,245,154,.5)}
+.rev .st{color:var(--g);letter-spacing:.25em;font-size:12px}
+.rev q{display:block;quotes:none;font-size:15px;line-height:1.55;margin:18px 0 24px}
+.rev small{margin-top:auto;color:var(--mute);font-size:11px;text-transform:uppercase;font-weight:600}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px}
+.tags span{border:1px solid rgba(182,245,154,.45);color:var(--g);padding:8px 16px;border-radius:99px;font-size:12px;font-weight:500;transition:.2s}
+.tags span:hover{background:var(--g);color:#000}
+
+/* booking */
+#book{background:radial-gradient(60% 80% at 100% 100%,rgba(127,211,106,.22),transparent 70%),var(--bg2)}
+.step{display:grid;grid-template-columns:repeat(12,1fr);column-gap:20px;padding:28px 0;border-top:1px solid var(--line);align-items:start}
+.step h4{grid-column:1/4;font-weight:600;font-size:12px;text-transform:uppercase;display:flex;gap:14px;align-items:center;padding-top:10px}
+.step h4 b{width:28px;height:28px;display:grid;place-items:center;border-radius:50%;border:1px solid var(--line);font-weight:500;transition:.25s}
+.step.done h4 b{background:var(--g);border-color:var(--g);color:#000}
+.step>div{grid-column:4/-1}
+.opts{display:flex;flex-wrap:wrap;gap:10px}
+.opt{padding:10px 18px;border:1px solid var(--line);border-radius:12px;font-size:14px;transition:.2s;background:rgba(255,255,255,.03)}
+.opt:hover{border-color:var(--g);transform:translateY(-2px)}
+.opt.on{background:var(--g);color:#000;border-color:var(--g);font-weight:600}
+.opt:disabled{opacity:.25;pointer-events:none;text-decoration:line-through}
+.days{display:flex;gap:10px;overflow-x:auto;padding:4px 0 10px}
+.day{flex:none;width:76px;padding:12px 0;border:1px solid var(--line);border-radius:14px;text-align:center;transition:.2s;background:rgba(255,255,255,.03)}
+.day small{display:block;font-size:11px;color:var(--mute);text-transform:uppercase}
+.day b{display:block;font-weight:300;font-size:1.7rem;line-height:1.3}
+.day:hover{border-color:var(--g);transform:translateY(-2px)}
+.day.on{background:var(--g);color:#000;border-color:var(--g)}.day.on small{color:#1d3a1b}
+input[type=text]{width:min(420px,100%);padding:13px 18px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.04);color:var(--ink);font:inherit;outline:0;transition:.2s}
+input[type=text]:focus{border-color:var(--g);box-shadow:0 0 0 4px rgba(182,245,154,.15)}
+input::placeholder{color:var(--mute)}
+.fin{display:grid;grid-template-columns:repeat(12,1fr);column-gap:20px;align-items:center;padding-top:30px;border-top:1px solid var(--line)}
+.fin small{grid-column:1/4;font-size:12px;font-weight:600;text-transform:uppercase}
+.fin .sum{grid-column:4/10;font-size:14px}
+.send{grid-column:10/-1;justify-self:end;padding:16px 26px;border-radius:14px;background:var(--g);color:#000;font-weight:600;transition:.25s;box-shadow:0 0 40px rgba(182,245,154,.35)}
+.send:hover{transform:translateY(-3px);box-shadow:0 0 60px rgba(182,245,154,.55)}
+.send.off{opacity:.25;pointer-events:none;box-shadow:none}
+
+/* visit */
+.visit{display:grid;grid-template-columns:repeat(12,1fr);column-gap:20px;align-items:stretch}
+.visit .ph{grid-column:1/6;min-height:460px}
+.info{grid-column:7/13;display:grid;grid-template-columns:1fr 1fr;gap:34px 30px;align-content:start}
+.info>div.w{grid-column:1/-1}
+.info small{display:block;margin-bottom:6px;color:var(--g);font-size:11px;font-weight:600;text-transform:uppercase}
+.info p{font-size:15px;max-width:34ch}
+.info a:hover{color:var(--g)}
+.info .pill{margin-top:6px}
+.mapbtn{margin-top:20px}
+
+footer{padding:60px var(--pad) 40px;border-top:1px solid var(--line);overflow:hidden}
+.bigw{font-family:var(--wide);font-size:clamp(2rem,10.2vw,10rem);line-height:1;white-space:nowrap;letter-spacing:.03em;background:linear-gradient(180deg,#fff,rgba(182,245,154,.15));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:30px}
+footer .fmark{height:90px;width:auto;margin-bottom:26px;opacity:.9}
+footer .r{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:12px;color:var(--mute)}
+footer .r a:hover{color:var(--g)}
+.fab{position:fixed;right:20px;bottom:20px;z-index:40;padding:15px 22px;border-radius:16px;background:var(--g);color:#000;font-weight:600;box-shadow:0 10px 40px rgba(182,245,154,.35);transform:translateY(120px);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.fab.show{transform:none}
+
+@media(max-width:980px){
+  .links{display:none}
+  .hero{grid-template-columns:1fr 1fr;padding-top:100px}
+  .m1,.m2,.m3{grid-column:auto}.m3{grid-column:1/-1;grid-row:2;margin-top:10px}
+  .hero .main{grid-row:3;grid-column:1/-1;padding:5vh 0}
+  .wordmark{grid-row:4;grid-column:1/-1;margin-bottom:5vh}
+  .bottom{grid-row:5;grid-column:1/-1}
+  .cta{bottom:24px;right:20px;gap:10px}.cta .ct{padding:12px 18px;font-size:14px;border-radius:14px}.plus{width:56px;height:56px;border-radius:15px}.plus svg{width:26px;height:26px}
+  .shade{background:linear-gradient(180deg,rgba(4,5,4,.55),var(--bg) 90%)}
+  .sh .lbl,.sh h2,.step h4,.step>div,.fin small,.fin .sum,.send{grid-column:1/-1}
+  .sh{row-gap:14px}.step h4{margin-bottom:14px}.fin{row-gap:14px}.send{justify-self:start}
+  .svc,.sview{grid-column:1/-1}.sview{display:none}
+  .row{grid-template-columns:36px 1fr auto;row-gap:6px}.row p{grid-column:2/3;grid-row:2}
+  .revs{grid-template-columns:1fr 1fr}
+  .space{grid-template-columns:1fr 1fr;grid-auto-rows:44vw}
+  .space .a,.space .b,.space .c,.space .d{grid-column:auto;grid-row:auto}.space .a{grid-row:span 2}.space .b{grid-column:1/-1}
+  .visit .ph,.info{grid-column:1/-1}.visit .ph{min-height:340px;margin-bottom:30px}
+}
+@media(max-width:600px){
+  .revs{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line);padding-left:0}.stat:last-child{border:0}
+  .info{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="#top" class="logo"><img src="photos/logo.png" alt="">ATHENIAN</a>
+  <nav class="links lbl"><a href="#services">Services</a><a href="#work">Work</a><a href="#reviews">Reviews</a><a href="#book">Book</a><a href="#visit">Visit</a></nav>
+  <a href="#book" class="pill"><span>↗</span> Book now</a>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="bg" aria-hidden="true"></div><div class="shade" aria-hidden="true"></div>
+
+  <div class="m1 lbl">Category:<br>Salon &amp; Academy</div>
+  <div class="m2 lbl">Year<br><span id="yr0">2026</span></div>
+  <div class="m3 lbl">Hair, Colour, Botox<br>Skin &amp; Makeup · BTM Layout</div>
+
+  <div class="main">
+    <h1>Athenian Salon BTM</h1>
+    <h2 class="sub">Hair, colour &amp; skin, done properly</h2>
+  </div>
+  <div class="wordmark" aria-hidden="true">ATHENIAN</div>
+
+  <div class="bottom">
+    <div class="lbl">Open until<br>9:30 PM daily</div>
+    <div class="big"><span data-count="4.9" data-dec="1">0</span>★</div>
+    <div class="meter" aria-hidden="true"><i class="tk" style="left:0"></i><i class="tk" style="left:39%"></i><i class="tk" style="right:0"></i><i class="fill" id="fill"></i></div>
+  </div>
+  <a href="#book" class="cta" aria-label="Book an appointment"><span class="ct">Book now</span><span class="plus"><svg viewBox="0 0 42 42" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M21 3v36M3 21h36"/></svg></span></a>
+</section>
+
+<section id="space">
+  <div class="sh rv"><span class="lbl">01 / The space</span><h2>Step <em>inside</em></h2></div>
+  <div class="space">
+    <figure class="ph a rv"><img src="photos/storefront.jpg" alt="Athenian Salon storefront in BTM Layout" loading="lazy"><figcaption>Storefront · BTM Layout</figcaption></figure>
+    <figure class="ph b rv" style="--d:.08s"><img src="photos/interior-pano.jpg" alt="Panoramic view of the salon floor" loading="lazy"><figcaption>The salon floor</figcaption></figure>
+    <figure class="ph c rv" style="--d:.14s"><img src="photos/interior-tall.jpg" alt="Styling stations with oval mirrors" loading="lazy"><figcaption>Styling stations</figcaption></figure>
+    <figure class="ph d rv" style="--d:.2s"><img src="photos/interior-wide.jpg" alt="Barber chairs and mirrors" loading="lazy"><figcaption>Chairs &amp; mirrors</figcaption></figure>
+  </div>
+</section>
+
+<section id="services">
+  <div class="sh rv"><span class="lbl">02 / Services</span><h2>What we <em>do</em></h2></div>
+  <div class="svcwrap">
+    <div class="svc" id="svc"></div>
+    <div class="sview rv" id="sview" aria-hidden="true"></div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat rv"><span class="lbl mute">Google rating</span><b><span data-count="4.9" data-dec="1">0</span><i>★</i></b></div>
+  <div class="stat rv" style="--d:.1s"><span class="lbl mute">Reviews</span><b><span data-count="928">0</span><i>+</i></b></div>
+  <div class="stat rv" style="--d:.2s"><span class="lbl mute">Open until</span><b><span data-count="570" data-time="1">0:00</span><i>PM</i></b></div>
+</div>
+
+<section id="work" style="overflow:hidden">
+  <div class="sh rv"><span class="lbl">03 / Our work</span><h2>Results, <em>not promises</em></h2></div>
+  <div class="results rv">
+    <figure class="ph"><img src="photos/hair-copper.jpg" alt="Copper long hair with soft waves" loading="lazy"><figcaption>Copper colour</figcaption></figure>
+    <figure class="ph"><img src="photos/hair-balayage.jpg" alt="Golden balayage with loose waves" loading="lazy"><figcaption>Balayage</figcaption></figure>
+    <figure class="ph"><img src="photos/hair-plum-wave.jpg" alt="Plum ombre waves" loading="lazy"><figcaption>Plum ombre</figcaption></figure>
+    <figure class="ph"><img src="photos/hair-caramel.jpg" alt="Caramel highlights with curls" loading="lazy"><figcaption>Caramel highlights</figcaption></figure>
+    <figure class="ph"><img src="photos/hair-curls.jpg" alt="Sculpted curls" loading="lazy"><figcaption>Styling &amp; curls</figcaption></figure>
+    <figure class="ph"><img src="photos/hair-sleek.jpg" alt="Sleek straight hair" loading="lazy"><figcaption>Smoothing</figcaption></figure>
+    <figure class="ph"><img src="photos/hair-long.jpg" alt="Long layered haircut" loading="lazy"><figcaption>Long layers</figcaption></figure>
+    <figure class="ph"><img src="photos/bridal.jpg" alt="Bridal makeup look" loading="lazy" style="object-position:30% 30%"><figcaption>Bridal makeup</figcaption></figure>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="sh rv"><span class="lbl">04 / Reviews</span><h2>Real people, real <em>results</em></h2></div>
+  <div class="revs">
+    <div class="rev rv"><div class="st">★★★★★</div><q>Very good service, friendly staff, quality products and very fast service ✨😁👍</q><small>Google review</small></div>
+    <div class="rev rv" style="--d:.08s"><div class="st">★★★★★</div><q>Nice ambience, calm atmosphere, good therapists and great manager.</q><small>Google review</small></div>
+    <div class="rev rv" style="--d:.16s"><div class="st">★★★★★</div><q>Reallay nice place .I took my son there we both loved.price also pretty decent</q><small>Google review</small></div>
+    <div class="rev rv" style="--d:.24s"><div class="st">★★★★★</div><q>A huge thank you to Priyanka for the amazing haircut today! She was professional, friendly, and took time to understand exactly what I wanted and absolutely loving my new look.</q><small>Google review</small></div>
+  </div>
+  <div class="tags rv"><span>Polite staff</span><span>Hair colour</span><span>Botox</span><span>Beard trim</span><span>Women-owned</span><span>LGBTQ+ friendly</span></div>
+</section>
+
+<section id="book">
+  <div class="sh rv"><span class="lbl">05 / Book</span><h2>Pick a <em>slot</em></h2></div>
+  <div class="rv">
+    <div class="step" id="s1"><h4><b>1</b>Service</h4><div class="opts" id="svcOpts"></div></div>
+    <div class="step" id="s2"><h4><b>2</b>Day</h4><div class="days" id="days"></div></div>
+    <div class="step" id="s3"><h4><b>3</b>Time</h4><div class="opts" id="times"></div></div>
+    <div class="step" id="s4"><h4><b>4</b>Your name</h4><div><input type="text" id="name" placeholder="e.g. Priya" autocomplete="given-name" maxlength="40"></div></div>
+    <div class="fin">
+      <small id="sumL">Still needed</small>
+      <span class="sum" id="sum"></span>
+      <a class="send off" id="send" target="_blank" rel="noopener">Send on WhatsApp ↗</a>
+    </div>
+  </div>
+</section>
+
+<section id="visit">
+  <div class="sh rv"><span class="lbl">06 / Visit</span><h2>Find <em>us</em></h2></div>
+  <div class="visit">
+    <figure class="ph rv"><img src="photos/storefront.jpg" alt="Athenian Salon storefront" loading="lazy" style="object-position:50% 40%"><figcaption>1198 First Floor, 16th Main Rd</figcaption></figure>
+    <div class="info rv" style="--d:.1s">
+      <div class="w"><small>Address</small><p>1198 First Floor, 16th Main Rd, Mahadeshwara Nagar, Stage 2, BTM Layout, Bengaluru, Karnataka 560076</p></div>
+      <div><small>Hours</small><p>Open until 9:30 pm</p></div>
+      <div><small>Phone / WhatsApp</small><p><a href="tel:+918431337319">084313 37319</a></p></div>
+      <div><small>Plus code</small><p>WJ65+GX Bengaluru</p></div>
+      <div><small>Website</small><p><a target="_blank" rel="noopener" href="https://atheniansalon.com">atheniansalon.com</a></p></div>
+      <div class="w">
+        <a class="pill" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Athenian+Salon+BTM+1198+16th+Main+Rd+Mahadeshwara+Nagar+BTM+Layout+Bengaluru+560076">↗ Open in Google Maps</a>
+        <a class="pill" style="margin-left:8px" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Athenian+Salon+BTM+1198+16th+Main+Rd+Mahadeshwara+Nagar+BTM+Layout+Bengaluru+560076">Get directions</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <img class="fmark" src="photos/logo.png" alt="Athenian logo"><div class="bigw" aria-hidden="true">ATHENIAN</div>
+  <div class="r"><span>© <span id="yr"></span> Athenian Salon BTM · Photos from the Google Maps listing</span><a href="#book">→ Book an appointment</a></div>
+</footer>
+
+<a href="#book" class="fab" id="fab">+ Book</a>
+
+<script>
+const WA = '918431337319';
+const SERVICES = [
+  ['Haircut & styling','Cuts and soft curls, tailored to your face.','hair-curls'],
+  ['Hair colour','Global colour, golden tones and highlights.','hair-balayage'],
+  ['Hair botox','Smoother, softer, more manageable hair.','hair-sleek'],
+  ['Makeup & nail art','Occasion looks and detailed nails.','bridal']
+];
+const OPEN = 10, CLOSE = 20;
+const $ = s => document.querySelector(s), el = (t,c,h) => {const e=document.createElement(t); if(c)e.className=c; if(h!=null)e.innerHTML=h; return e};
+const state = {svc:new Set(), date:null, time:null, name:'', dayIdx:null};
+
+requestAnimationFrame(()=>setTimeout(()=>$('#fill').style.width='68%',50));
+$('#yr0').textContent=new Date().getFullYear();
+
+/* services, with a sticky photo that follows the hovered row */
+const svc = $('#svc'), svcOpts = $('#svcOpts'), sview = $('#sview');
+SERVICES.forEach(([n,d,img],k)=>{
+  const im = img ? el('img',k?'':'on') : el('div','empty'+(k?'':' on'),`<span>0${k+1}</span><b>${n}</b>`);
+  if(img){im.src='photos/'+img+'.jpg'; im.alt=''}
+  sview.append(im);
+  const r = el('div','row rv'+(k?'':' act'),`<span class="n">0${k+1}</span><h3>${n}</h3><p>${d}</p><button type="button">Book this →</button>`);
+  r.style.setProperty('--d',(k%3)*.06+'s');
+  r.addEventListener('mouseenter',()=>{svc.querySelectorAll('.row').forEach(x=>x.classList.remove('act'));r.classList.add('act');[...sview.children].forEach((x,j)=>x.classList.toggle('on',j===k))});
+  r.querySelector('button').onclick=()=>{state.svc.add(n); sync(); $('#book').scrollIntoView()};
+  svc.append(r);
+  const o = el('button','opt',n); o.type='button'; o.dataset.v=n;
+  o.onclick=()=>{state.svc.has(n)?state.svc.delete(n):state.svc.add(n); sync()};
+  svcOpts.append(o);
+});
+
+/* booking */
+const days = $('#days'), today = new Date();
+for(let d=0; d<10; d++){
+  const dt = new Date(today.getFullYear(),today.getMonth(),today.getDate()+d);
+  const b = el('button','day',`<small>${d===0?'Today':dt.toLocaleDateString('en-IN',{weekday:'short'})}</small><b>${dt.getDate()}</b><small>${dt.toLocaleDateString('en-IN',{month:'short'})}</small>`);
+  b.type='button'; b.dataset.v=d;
+  b.onclick=()=>{state.date=dt; state.dayIdx=d; if(d===0&&state.time&&state.time.h<=new Date().getHours())state.time=null; sync()};
+  days.append(b);
+}
+const times = $('#times');
+for(let h=OPEN; h<=CLOSE; h++){
+  const label = ((h+11)%12+1)+':00 '+(h<12?'AM':'PM');
+  const b = el('button','opt',label); b.type='button'; b.dataset.h=h;
+  b.onclick=()=>{state.time={h,label}; sync()};
+  times.append(b);
+}
+$('#name').addEventListener('input',e=>{state.name=e.target.value.trim(); sync()});
+
+function message(){
+  return ['Hi Athenian Salon! I would like to book an appointment.','',
+    'Name: '+state.name,
+    'Service: '+[...state.svc].join(', '),
+    'Date: '+state.date.toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long'}),
+    'Time: '+state.time.label,'',
+    'Please confirm if this slot is available. Thank you!'].join('\n');
+}
+function sync(){
+  document.querySelectorAll('#svcOpts .opt').forEach(o=>o.classList.toggle('on',state.svc.has(o.dataset.v)));
+  document.querySelectorAll('.day').forEach(o=>o.classList.toggle('on',+o.dataset.v===state.dayIdx));
+  const nowH = new Date().getHours();
+  document.querySelectorAll('#times .opt').forEach(o=>{
+    o.disabled = state.dayIdx===0 && +o.dataset.h<=nowH;
+    o.classList.toggle('on',!!state.time && +o.dataset.h===state.time.h);
+  });
+  $('#s1').classList.toggle('done',state.svc.size>0);
+  $('#s2').classList.toggle('done',!!state.date);
+  $('#s3').classList.toggle('done',!!state.time);
+  $('#s4').classList.toggle('done',!!state.name);
+  const miss = []; if(!state.svc.size)miss.push('a service'); if(!state.date)miss.push('a day'); if(!state.time)miss.push('a time'); if(!state.name)miss.push('your name');
+  const send = $('#send');
+  if(miss.length){
+    send.classList.add('off'); send.removeAttribute('href');
+    $('#sumL').textContent='Still needed'; $('#sum').textContent=miss.join(' / ');
+  } else {
+    send.classList.remove('off'); send.href='https://wa.me/'+WA+'?text='+encodeURIComponent(message());
+    $('#sumL').textContent='Your booking';
+    $('#sum').textContent=[...state.svc].join(', ')+' / '+state.date.toLocaleDateString('en-IN',{weekday:'short',day:'numeric',month:'short'})+' / '+state.time.label+' / '+state.name;
+  }
+}
+sync();
+
+/* reveal + counters */
+function count(n){
+  const to=+n.dataset.count, dec=+n.dataset.dec||0, t0=performance.now();
+  (function f(t){const p=Math.min((t-t0)/1400,1), e=1-Math.pow(1-p,3); const v=Math.round(to*e); n.textContent=n.dataset.time?Math.floor(v/60)+':'+String(v%60).padStart(2,'0'):(to*e).toFixed(dec); if(p<1)requestAnimationFrame(f)})(t0);
+}
+document.querySelectorAll('.hero [data-count]').forEach(count);
+const io = new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return; e.target.classList.add('in'); io.unobserve(e.target);
+  const c = e.target.querySelector('[data-count]'); if(c) count(c);
+}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(n=>io.observe(n));
+
+addEventListener('scroll',()=>{
+  const b=$('#book').getBoundingClientRect();
+  $('#fab').classList.toggle('show',scrollY>500 && (b.top>innerHeight||b.bottom<0));
+},{passive:true});
+$('#yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
